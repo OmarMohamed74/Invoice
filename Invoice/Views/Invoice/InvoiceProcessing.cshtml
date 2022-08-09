@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Product>
+
+
+<form method="post">
+    
+  <div class="form-row" >
+      <div class="row flex-column align-items-center justify-content-between mt-5">
+           <div class="form-group col-md-6">
+      <label >Customer Name</label>
+      <input class="form-control"  placeholder="Customer Name" name="CustomerName">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Products</label>
+      <select  class="form-control" name="productId">
+          @foreach (var product in @Model )
+          {
+              <option value="@product.Id" >@product.Name</option>
+          }
+       
+        
+      </select>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label > Quantity</label>
+      <input class="form-control"  placeholder="Quantity" name="Quantity">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label> Price</label>
+      <input class="form-control"  placeholder="Price" name="Price">
+    </div>
+    
+      </div>
+   
+      <button type="submit" class="btn btn-primary mt-2 float-end " >Submit</button>
+  </div>
+ 
+  
+</form>
+

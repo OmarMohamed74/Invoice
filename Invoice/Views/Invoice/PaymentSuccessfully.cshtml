@@ -1,0 +1,56 @@
+﻿@using Invoice.ViewModels
+@model InvoiceSucceededVM
+
+
+<div class="card" >
+  <div class="card-body mx-4">
+    <div class="container">
+      <p class="" style="font-size: 30px;">Your Invoice Summary</p>
+      <div class="row">
+        <ul class="list-unstyled ">
+          <li class="text-muted "><span class="text-black me-3 ">CustomerName</span>@Model.invoiceheader.CustomerName</li>
+          <li class="text-muted "><span class="text-black me-3 ">InvoiceSerial</span>@Model.invoiceheader.InvoiceSerial</li>
+          <li class="text-muted "><span class="text-black  me-3">AppliedDate</span>@Model.invoiceheader.Date</li>
+          </ul>
+          <hr>
+           <div class="row">
+        <div class="col-xl-10">
+          <p>Products</p> 
+        </div>
+        <div class="col-xl-2">
+          <p class="float-end"> </p>
+        </div>
+        <hr>
+      </div>
+          <div class="col-xl-10">
+            <p>Quantity</p>
+          </div>
+          <div class="col-xl-2">
+            <p class="float-end">@Model.invoicedetails.Quantity 
+            </p>
+          </div>
+          <hr>
+      </div>
+      <div class="row">
+        <div class="col-xl-10">
+          <p>Price</p>
+        </div>
+        <div class="col-xl-2">
+          <p class="float-end"> @Model.invoicedetails.Price.ToString("c")
+          </p>
+        </div>
+        <hr>
+      </div>
+      <div class="row text-black">
+
+        <div class="col-xl-12">
+          <p class="float-end fw-bold">Total Price: @(@Model.invoicedetails.Quantity * @Model.invoicedetails.Price).00$
+          </p>
+        </div>
+     
+      </div>
+    
+
+    </div>
+  </div>
+</div>
